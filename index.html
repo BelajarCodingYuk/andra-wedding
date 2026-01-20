@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Undangan Pernikahan Andra</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-main: #f6f1ea;
+      --bg-soft: #fbf9f6;
+      --card: #ffffff;
+      --text: #2f2f2f;
+      --muted: #7a7a7a;
+      --accent: #c6a86d;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, var(--bg-main), var(--bg-soft));
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    section {
+      padding: 56px 20px;
+      max-width: 720px;
+      margin: auto;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 20px;
+      padding: 40px 24px;
+      box-shadow: 0 20px 40px rgba(0,0,0,.06);
+      text-align: center;
+    }
+
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+      margin: 0 0 16px;
+    }
+
+    h1 { font-size: 36px; }
+    h2 { font-size: 26px; }
+
+    p { margin: 0 0 12px; }
+
+    .muted {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .divider {
+      width: 56px;
+      height: 2px;
+      background: var(--accent);
+      margin: 24px auto;
+    }
+
+    .btn {
+      padding: 12px 28px;
+      border-radius: 999px;
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--text);
+      font-size: 14px;
+      cursor: pointer;
+      transition: all .3s ease;
+    }
+
+    .btn:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    /* Opening */
+    #opening {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(180deg, var(--bg-main), var(--bg-soft));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+
+    #opening.hidden { display: none; }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: all .9s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Countdown */
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .time-box {
+      background: var(--bg-soft);
+      padding: 14px 16px;
+      border-radius: 14px;
+      min-width: 70px;
+    }
+
+    footer {
+      padding: 32px 16px;
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 30px; }
+      h2 { font-size: 22px; }
+    }
+
+    /* === FOTO === */
+.hero-photo {
+  margin: 24px auto 8px;
+}
+
+.hero-photo img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid rgba(255,255,255,0.7);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+/* Pasangan */
+.couple-wrap {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.couple-card {
+  width: 160px;
+  text-align: center;
+}
+
+.couple-card img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.2);
+  margin-bottom: 12px;
+}
+
+@media (max-width: 480px) {
+  .hero-photo img {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+<!-- AUDIO -->
+<audio id="bg-music" loop>
+  <!-- GANTI LINK INI DENGAN FILE MP3 KAMU -->
+  <source src="BgMusik.mp3" type="audio/mpeg">
+</audio>
+
+<!-- OPENING -->
+<div id="opening">
+  <section>
+    <div class="card reveal active">
+      <p class="muted">Kepada Yth.</p>
+      <h2>Teman Kami</h2>
+      <div class="divider"></div>
+      <p>
+        Saya Pribadi Lebih Percaya Undangan ini,<br>
+        Daripada Undangan Andra.
+      </p>
+      <p class="muted" style="margin-top:16px">
+        *Undangan ini bersifat bercanda*
+      </p>
+      <br>
+      <button class="btn" onclick="openInvitation()">Buka Undangan</button>
+    </div>
+  </section>
+</div>
+
+<!-- HERO -->
+<section class="reveal">
+  <div class="card">
+    <p class="muted">Undangan Pernikahan</p>
+    <h1>Andra & Monyet</h1>
+
+    <!-- FOTO UTAMA -->
+    <div class="hero-photo">
+      <img src="monyet.jpg" alt="Foto Andra dan Monyet">
+    </div>
+
+    <p class="muted">atau setidaknya, begitulah katanya</p>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<section class="reveal">
+  <div class="card">
+    <h2>Catatan Penting</h2>
+    <div class="divider"></div>
+    <p>
+      Undangan ini dibuat sebagai bentuk candaan.<br>
+      Tidak dapat dipastikan apakah peristiwa ini benar-benar terjadi.
+    </p>
+  </div>
+</section>
+
+<!-- DETAIL -->
+<section class="reveal">
+  <div class="card">
+    <h2>Detail Acara</h2>
+    <div class="divider"></div>
+
+    <p><strong>Hari & Tanggal</strong><br>Akan ditentukan oleh semesta</p><br>
+    <p><strong>Waktu</strong><br>Ketika semua sudah siap</p><br>
+    <p>
+      <strong>Lokasi</strong><br>
+      Puncak Jaya, Papua, Indonesia
+    </p><br>
+
+    <button class="btn" onclick="openMap()">Lihat Lokasi</button>
+  </div>
+</section>
+
+<!-- COUNTDOWN -->
+<section class="reveal">
+  <div class="card">
+    <h2>Hitung Mundur</h2>
+    <p class="muted">Menuju sesuatu… atau tidak sama sekali</p>
+
+    <div class="countdown">
+      <div class="time-box"><strong id="d">--</strong><br>Hari</div>
+      <div class="time-box"><strong id="h">--</strong><br>Jam</div>
+      <div class="time-box"><strong id="m">--</strong><br>Menit</div>
+      <div class="time-box"><strong id="s">--</strong><br>Detik</div>
+    </div>
+  </div>
+</section>
+
+<!-- RSVP -->
+<section class="reveal">
+  <div class="card">
+    <h2>Konfirmasi Kehadiran</h2>
+    <p class="muted">(tidak wajib, tidak mengikat)</p>
+    <div class="divider"></div>
+
+    <button class="btn" onclick="rsvp()">Saya percaya ini nyata</button><br><br>
+    <button class="btn" onclick="rsvp()">Saya rasa ini bercanda</button><br><br>
+    <button class="btn" onclick="rsvp()">PASTI INI BERCANDA!</button>
+  </div>
+</section>
+
+<!-- PENUTUP -->
+<section class="reveal">
+  <div class="card">
+    <p>Terima kasih telah membuka undangan ini.</p>
+    <p>
+      Jika ini benar terjadi, semoga berbahagia.<br>
+      Jika tidak, semoga tetap lucu.
+    </p>
+    <p class="muted" style="margin-top:16px">
+      Salam,<br>Andra & Monyet
+    </p>
+  </div>
+</section>
+
+<footer>
+  © 2026 Hidayat Tamami
+</footer>
+
+<script>
+  function openInvitation() {
+    document.getElementById('opening').classList.add('hidden');
+    document.getElementById('bg-music').play();
+  }
+
+  function openMap() {
+    window.open(
+      "https://www.google.com/maps/place/Puncak+Jaya,+Papua",
+      "_blank"
+    );
+  }
+
+  function rsvp() {
+    alert("Terima kasih sudah ikut bercanda.");
+  }
+
+  // Countdown acak
+  const target = Date.now() + (Math.random() * 10 + 5) * 86400000;
+
+  setInterval(() => {
+    let diff = target - Date.now();
+    if (diff < 0) diff = 0;
+
+    d.textContent = Math.floor(diff / 86400000);
+    h.textContent = Math.floor(diff / 3600000) % 24;
+    m.textContent = Math.floor(diff / 60000) % 60;
+    s.textContent = Math.floor(diff / 1000) % 60;
+  }, 1000);
+
+  // Scroll reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('active');
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
